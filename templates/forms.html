@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="forms.css" />
+
+    <style>
+
+body {
+    font-family: 'Roboto', sans-serif!important;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.mainscreen
+{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    background-color: #DFDBE5;
+    overflow: hidden;
+    background-image: url("https://wallpaperaccess.com/full/3063067.png");
+    color:#963E7B;
+}
+
+.card {
+    width: 60rem;
+    margin: auto;
+    background: white;
+    position: center;
+    align-self: center;
+    top: 50rem;
+    border-radius: 1.5rem;
+    box-shadow: 4px 3px 20px #3535358c;
+    display: flex;
+    flex-direction: row;
+    height: 50rem; 
+    overflow: auto;
+}
+
+
+.leftside {
+    background: linear-gradient(135deg, #753370 0%, #298096 100%);
+    width: 25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    height: 100rem;
+    overflow: hidden; /* Make sure the container hides any overflow content */
+ 
+}
+
+.product {
+
+    object-fit: cover;
+    width: 20em;
+    height: 20em;
+    margin-left: -24.5%;
+    top: 35%; /* Center the image vertically */
+    left: 50%; /* Center the image horizontally */
+    position: fixed;
+   
+}
+
+
+.rightside {
+    background-color: #ffffff;
+	width: 35rem;
+	border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem 2rem 3rem 3rem;
+}
+
+p{
+    display:block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: .8rem 0;
+}
+
+.inputbox
+{
+    color:#030303;
+	width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1.1rem;
+    font-weight: 500;
+  outline:none;
+}
+
+.expcvv {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+}
+
+.expcvv_text{
+    padding-right: 1rem;
+}
+.expcvv_text2{
+    padding:0 1rem;
+}
+
+.button{
+    background: linear-gradient(
+135deg
+, #753370 0%, #298096 100%);
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    width:100%;
+    letter-spacing: .11rem;
+    outline:none;
+}
+
+.button:hover
+{
+	transform: scale(1.05) translateY(-3px);
+    box-shadow: 3px 3px 6px #38373785;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card{
+        flex-direction: column;
+        width: auto;
+      
+    }
+
+    .leftside{
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+      border-top-right-radius:0;
+      border-radius:0;
+    }
+
+    .rightside{
+        width:auto;
+        border-bottom-left-radius: 1.5rem;
+        padding:0.5rem 3rem 3rem 2rem;
+      border-radius:0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="mainscreen">
+       
+          <div class="card">
+            <div class="leftside">
+              <img
+              src="https://uxwing.com/wp-content/themes/uxwing/download/business-professional-services/job-search-icon.png"
+                class="product"
+                alt="imgg"
+              />
+            </div>
+            <div class="rightside">
+                <form method="POST" action="{{ url_for('predict') }}">
+                    <h1>Predict changing jobs</h1>
+                    
+                    <label for="city">City</label>
+                    <input type="text" class="inputbox" name="city" id="city" required />
+                    
+                    <label for="gender">Gender</label>
+                    <input type="text" class="inputbox" name="gender" id="gender" required />
+                    
+                    <label for="experience">Experience</label>
+                    <input type="text" class="inputbox" name="experience" id="experience" required />
+                    
+                    <label for="enrolled_university">Enrolled University</label>
+                    <input type="text" class="inputbox" name="enrolled_university" id="enrolled_university" required />
+                    
+                    <label for="education_level">Education Level</label>
+                    <input type="text" class="inputbox" name="education_level" id="education_level" required />
+                    
+                    <label for="major_discipline">Major Discipline</label>
+                    <input type="text" class="inputbox" name="major_discipline" id="major_discipline" required />
+                    
+                    <label for="relevent_experience">Relevant Experience</label>
+                    <input type="text" class="inputbox" name="relevent_experience" id="relevent_experience" required />
+                    
+                    <label for="company_size">Company Size</label>
+                    <input type="text" class="inputbox" name="company_size" id="company_size" required />
+                    
+                    <label for="company_type">Company Type</label>
+                    <input type="text" class="inputbox" name="company_type" id="company_type" required />
+                    
+                    <label for="last_new_job">Last New Job</label>
+                    <input type="text" class="inputbox" name="last_new_job" id="last_new_job" required />
+                    
+                    <label for="training_hours">Training Hours</label>
+                    <input type="text" class="inputbox" name="training_hours" id="training_hours" required />
+                   
+                    <button type="submit" class="button">Predict</button>
+                </form>
+                
+              
+                
+                
+             
+            </div>
+          </div>
+          
+            {{ prediction_text }}
+
+        </div>
+      
+      
+    
+</body>
+</html>

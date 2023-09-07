@@ -1,0 +1,81 @@
+<html>
+    <style>
+        
+body{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    background-color: #DFDBE5;
+    overflow: hidden;
+    background-image: url("https://wallpaperaccess.com/full/3063067.png");
+    color:#963E7B;
+  
+}
+
+a{
+margin-top: 95px;
+padding: 20px ;
+background: linear-gradient(
+135deg
+, #753370 0%, #298096 100%);
+display: flex;
+justify-content: center;
+color: white;
+text-decoration: none;
+font-size: 25px;
+
+}
+
+
+
+
+
+.f{
+    background-color: white;
+    width: 700px;
+    height: 500px;
+    margin: auto;
+    border-radius: 5px;
+  
+}
+
+    </style>
+
+<body>
+
+    <div class="f">
+    <center>
+
+    
+    {% if data == 0 %}
+   
+    <h1 style="color: red; font-size: 48px; font-weight: bold; text-align: center; margin-top: 50px;">The employee stays in their job</h1>
+   
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/No-Symbol.png/240px-No-Symbol.png'>
+  
+
+    {% else %}
+ <h1 style="color: green;  font-size: 48px; font-weight: bold; text-align: center; margin-top: 50px;">The employee leave their job </h1>
+         <img src='https://www.freeiconspng.com/thumbs/yes-png/yes-png-9.png' style="height: 250px;">  
+
+    {% endif %}
+
+   
+    
+
+        <br><br>
+    
+
+    </center>
+    <a href='/'>Go Back To Home Page</a>
+
+    
+
+</div>
+
+</body>
+
+</html>
+
+
